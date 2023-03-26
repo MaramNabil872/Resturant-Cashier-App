@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title>اختر تاريخ العمليه</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg-content">
+ 
+  <ion-list id="lst">
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>التاريخ</ion-label>
+          <ion-label slot="end">{{dateExample | date}}</ion-label>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          presentation="date"
+          [(ngModel)]="dateExample"
+          size="cover"
+          (ngModelChange)="next(dateExample)"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-list>
+  <!-- <div class="continue">
+    <ion-button (click)="next(dateExample)">التالي</ion-button>
+  </div> -->
+  
+</ion-content>

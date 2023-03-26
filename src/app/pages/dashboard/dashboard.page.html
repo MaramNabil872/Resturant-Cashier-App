@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+      <ion-title>لوحة قيادة العمليات</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="allOperations">
+  
+<ion-searchbar style="padding-left: 15px;padding-right: 15px; padding-top: 5%;" color="light" class="ion-no-padding" [(ngModel)]="term" mode="ios"
+        placeholder="Search">
+      </ion-searchbar>
+  <ion-list>
+    <ion-card
+    *ngFor="let op of allOperations| customFilter: term; index as i;"
+    (click)="handleClick(i, op.id)"color="light" >
+      <ion-card-header >
+        <ion-item lines="none" >
+          <div class="headerr">
+          <b>العملية رقم :</b>
+          </div>
+          <span class="index">{{i}}</span>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>تاريخ العملية :</b>
+          </div>
+          <span class="index">
+            {{op.date}}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>المبلغ :</b>
+          </div>
+          <span class="index">
+            {{op.amount}}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>الاسم :</b>
+          </div>
+          <span class="index">
+            {{op.empoyee_driver_supplier
+            }}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>العمليه بخصوص :</b>
+        </div>
+          <span class="index">
+            {{op.about}}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>نوع العمليه :</b>
+        </div>
+          <span class="index">
+            {{op.type}}
+          </span>
+        </ion-item>
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>المورد اذا وجد :</b>
+        </div>
+          <span class="index">
+            {{op.supplier}}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+         <b>تمت في :</b>
+        </div>
+          <span class="index">
+            {{op.createdAt}}
+          </span>
+        </ion-item>
+
+        <ion-item lines="none" class="input_type">
+          <div class="colorr">
+          <b>النوع :</b>
+        </div>
+          <span class="index">
+            {{op.fromto}}
+          </span>
+        </ion-item>
+        
+      </ion-card-content>
+      <p><ion-button fill="outline" (click)="deleteClick(i)">حذف <ion-icon name="trash-outline"></ion-icon></ion-button>  
+  <ion-button fill="outline" (click)="edit(op,i)">تعديل <ion-icon name="create-outline"></ion-icon></ion-button></p>
+    </ion-card>
+    
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>السائق</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-content">
+  <ion-accordion-group #accordionGroup>
+    <ion-accordion value="employee">
+      <ion-item slot="header" color="light">
+        <ion-label>اختر السائق</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+          <div class="type">
+            <ion-button style="height: 100%;" *ngFor="let user of allUsers;let i=index" [color]="user.choosen==false?'light':''"  (click)="userChange(user,i)">{{user.username}} </ion-button>
+          </div>
+         </div>
+    </ion-accordion>
+    <ion-accordion value="amount" >
+      <ion-item slot="header" color="light">
+        <ion-label>ادخل المبلغ</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item class="input_type">
+          <ion-input placeholder="ادخل المبلغ باليورو" [(ngModel)]="amount" type="text" required="true" ></ion-input>
+        </ion-item>
+            </div>
+    </ion-accordion>
+    <ion-accordion  value="pic">
+      <ion-item slot="header" color="light">
+        <ion-label>ارفق الصورة</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item class="input_type" lines="none">
+          <ion-button style="font-size: medium;" (click)="takePicture()">اضغط لارفاق الصورة</ion-button>
+          <img id="img" src="" [ngClass]="imageURL?'':'image-none'"/>
+        </ion-item>
+      
+</div>
+
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div class="continue">
+    <ion-button (click)="next()">التالي</ion-button>
+  </div> 
+</ion-content>

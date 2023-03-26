@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+      <ion-title>لوحة قيادة الموردين</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="allSuppliers">
+  <div style="float: left;">
+    <ion-button (click)="addSupplier()" color="success">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button>
+  </div>
+<ion-searchbar style="padding-left: 15px;padding-right: 15px; padding-top: 5%;" color="light" class="ion-no-padding" [(ngModel)]="term" mode="ios"
+        placeholder="Search">
+      </ion-searchbar>
+  <ion-list>
+    <ion-card
+    *ngFor="let sup of allSuppliers| customFilter: term; index as i;"
+    color="light" >
+    <ion-card-header >
+      <ion-item lines="none" >
+        <div class="headerr">
+        <b>المورد رقم :</b>
+        </div>
+        <span class="index">{{i}}</span>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none" class="input_type">
+        <div class="colorr">
+        <b>اسم المورد :</b>
+        </div>
+        <span class="index">
+          {{sup}}
+        </span>
+      </ion-item>
+      
+    </ion-card-content>
+      <p><ion-button fill="outline" (click)="deleteClick(i)">حذف <ion-icon name="trash-outline"></ion-icon></ion-button>  
+  <ion-button fill="outline" (click)="edit(sup,i)">تعديل <ion-icon name="create-outline"></ion-icon></ion-button></p>
+    </ion-card>
+    
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+ion-grid{
+    padding-bottom: 80%;
+}
+
+.contentClass{
+    
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  --background: url(/assets/images/food.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  flex-direction: column;
+  justify-content: center;
+
+}

@@ -1,0 +1,20 @@
+h2{
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    margin: 5px;
+    border: 1px solid black;
+    background: aliceblue;
+    margin-top: 100px;
+    border-radius: 25px;
+}
+
+
+.continue{
+    // bottom: 10px;
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    padding-top: 35%;
+}

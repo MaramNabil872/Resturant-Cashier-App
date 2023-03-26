@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+      <ion-title>تصفية الكاشير</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-content">
+ 
+  <ion-item class="input_type" lines="none">
+    <ion-input placeholder="ادخل المبلغ باليورو" [(ngModel)]="amount" type="text" required="true" ></ion-input>
+  </ion-item>
+
+  <div class="continue">
+    <ion-button (click)="next()">التالي</ion-button>
+  </div> 
+</ion-content>

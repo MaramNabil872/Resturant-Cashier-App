@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>تعديل العملية</ion-title>
+    
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg-content">
+ 
+  <form #form="ngForm" (ngSubmit)="editOperation(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item lines="none" class="input_type">
+              <ion-label>تاريخ العملية :</ion-label>
+              <ion-input
+                name="date"
+                [(ngModel)]="operation.date"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>نوع العملية :</ion-label>
+              <ion-input
+                name="type"
+                [(ngModel)]="operation.type"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>مبلغ العملية :</ion-label>
+              <ion-input
+                name="amount"
+                [(ngModel)]="operation.amount"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>من/إلى :</ion-label>
+              <ion-input
+                name="fromto"
+                [(ngModel)]="operation.fromto"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>العملية بخصوص :</ion-label>
+              <ion-input
+                name="about"
+                [(ngModel)]="operation.about"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>اسم الموظف/السائق/المورد :</ion-label>
+              <ion-input
+                name="empoyee_driver_supplier"
+                [(ngModel)]="operation.empoyee_driver_supplier"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label>الصورة المرفقة :</ion-label>
+              <ion-input
+                name="attachment"
+                [(ngModel)]="operation.attachment"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="input_type">
+              <ion-label> المورد اذا وجد :</ion-label>
+              <ion-input
+                name="attachment"
+                [(ngModel)]="operation.supplier"
+                type="text"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div padding style="margin-top: 10%">
+            <ion-button
+              size="large"
+              type="submit"
+              expand="block"
+              >تعديل</ion-button
+            >
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

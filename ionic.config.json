@@ -1,0 +1,7 @@
+{
+  "name": "casheirApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

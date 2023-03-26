@@ -1,0 +1,33 @@
+
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title class="title">اسم التطبيق</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+<ion-content [fullscreen]="true" >
+  <div class="background-container">
+
+  
+
+  <!-- <div style="   padding-top: 40%; padding-right: 20%;">
+    <img style="max-width: 75%;" src="/assets/images/logo3.jpg"/>
+  </div> -->
+
+  <ion-grid style="text-align: center;padding-top: 100%; padding-left: 10%; padding-right: 10%;">
+    <ion-row>
+      <ion-col  align-self-center>
+        <!-- <ion-button [routerLink]="['/registeration']" expand="block" color="primary">إنشاء حساب</ion-button> -->
+        <!-- <span class="already">إذا كنت بالفعل مستخدم قم بتسجيل الدخول</span> -->
+        <ion-button (click)="login()" expand="block" color="danger">تسجيل الدخول باستخدام جوجل</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</div>
+
+</ion-content>

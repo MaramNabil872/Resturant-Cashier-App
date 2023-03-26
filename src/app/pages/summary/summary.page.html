@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title>تأكيد العمليه</ion-title>
+      
+  <!-- Back icon -->
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-content">
+
+  <ion-title class="summary">تأكيد العملية</ion-title>
+  <ion-item lines="none" class="input_type">
+    <ion-label position="fixed" class="label"><b>الاسم</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="loggedInUser"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type">
+    <ion-label position="fixed"class="label"><b>نوع العملية</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_type"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type">
+    <ion-label position="fixed" class="label"><b>{{fromOrTo}}</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_fromto"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type">
+    <ion-label position="fixed" class="label"><b>العملية بخصوص</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_about"></ion-input>
+  </ion-item>
+  <ion-item  lines="none" class="input_type"*ngIf="operation_about=='موظف'">
+    <ion-label position="fixed" class="label"><b>اسم الموظف</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_employee_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='مورد'">
+    <ion-label position="fixed" class="label"><b>اسم المورد</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_supplier_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='سائق'">
+    <ion-label position="fixed" class="label"><b>اسم السائق</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_driver_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='تحت حساب المشتريات'">
+    <ion-label position="fixed" class="label"><b>تحت حساب الموظف</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_employee_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='تقفيل حساب المشتريات'">
+    <ion-label position="fixed" class="label"><b>تقفيل حساب المشتريات الموظف</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_employee_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type">
+    <ion-label position="fixed" class="label"><b>المبلغ</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_amount"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='سائق'||operation_about=='مورد'">
+    <ion-label position="fixed" class="label"><b>الوثيقة المرفوعة</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_doc"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_about=='تقفيل حساب المشتريات'">
+    <ion-label position="fixed" class="label"><b>تقفيل حساب المشتريات الموظف</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_employee_name"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="input_type" *ngIf="operation_supplier">
+    <ion-label position="fixed" class="label"><b> اسم المورد</b></ion-label>
+    <ion-input readonly="true" [(ngModel)]="operation_supplier"></ion-input>
+  </ion-item>
+  <div class="continue">
+    <ion-button (click)="confirm()">تأكيد</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">casheirApp</string>
+    <string name="title_activity_main">casheirApp</string>
+    <string name="package_name">com.casheir.app</string>
+    <string name="custom_url_scheme">com.casheir.app</string>
+  <string name="server_client_id">1027814650922-52gtgrmqol1k1vo9pmcggiqrntsneajn.apps.googleusercontent.com</string>
+</resources>
